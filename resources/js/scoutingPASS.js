@@ -155,12 +155,12 @@ function addCounter(table, idx, name, data) {
   }
   cell2.classList.add("field");
   
-  var maxValue = 9;
+  var maxValue = 999;
   if (data.hasOwnProperty('max')) {
     maxValue = data.max;
   }
   if (isNaN(maxValue) || maxValue == 0) {
-	  maxValue = 9;
+	  maxValue = 999;
   }
   
   var button1 = document.createElement("input");
