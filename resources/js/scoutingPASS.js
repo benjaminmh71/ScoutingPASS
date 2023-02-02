@@ -154,10 +154,18 @@ function addCounter(table, idx, name, data) {
     cell1.setAttribute("title", data.tooltip);
   }
   cell2.classList.add("field");
-
+  
+  var maxValue = 9;
+  if (data.hasOwnProperty('max')) {
+    maxValue = data.max;
+  }
+  if (isNaN(maxValue) || maxValue == 0) {
+	  maxValue = 9;
+  }
+  
   var button1 = document.createElement("input");
   button1.setAttribute("type", "button");
-  button1.setAttribute("onclick", "counter(this.parentElement, -1)");
+  button1.setAttribute("onclick", "counter(this.parentElement, -1, "+maxValue+")");
   button1.setAttribute("value", "-");
   cell2.appendChild(button1);
 
@@ -179,7 +187,7 @@ function addCounter(table, idx, name, data) {
 
   var button2 = document.createElement("input");
   button2.setAttribute("type", "button");
-  button2.setAttribute("onclick", "counter(this.parentElement, 1)");
+  button2.setAttribute("onclick", "counter(this.parentElement, 1, "+maxValue+")");
   button2.setAttribute("value", "+");
   cell2.appendChild(button2);
 
@@ -288,6 +296,8 @@ function addClickableImage(table, idx, name, data) {
   }
   inp.setAttribute("id", "input_" + data.code);
   inp.setAttribute("value", "[]");
+  inp.setAttribute("class", "clickableImage");
+ 
   cell.appendChild(inp);
 
   // TODO: Make these more efficient/elegant
@@ -819,6 +829,9 @@ function validateData() {
         ret = false
       }
       // Normal validation (length <> 0)
+    } else if (document.getElementById("input_" + rf).value == "[]") {
+        errStr += rf + " ";
+        ret = false;
     } else if (document.getElementById("input_" + rf).value.length == 0) {
       errStr += rf + " "
       ret = false
@@ -959,7 +972,7 @@ function clearForm() {
   inputs = document.querySelectorAll("[id*='XY_']");
   for (e of inputs) {
     code = e.id.substring(3)
-    e.value = ""
+    e.value = "[]"
   }
 
   inputs = document.querySelectorAll("[id*='input_']");
@@ -973,6 +986,10 @@ function clearForm() {
     if (code == "e") continue
     if (code == "s") continue
 
+    if (e.className == "clickableImage") {
+      e.value = "[]";
+      continue;
+    }
 
     radio = code.indexOf("_")
     if (radio > -1) {
@@ -1270,12 +1287,16 @@ function onTeamnameChange(event) {
  * @param {element} element the <div> tag element (parent to the value tag).
  * @param {number} step the amount to add to the value tag.
  */
-function counter(element, step) {
+function counter(element, step, maxValue) {
   var ctr = element.getElementsByClassName("counter")[0];
   var result = parseInt(ctr.value) + step;
 
   if (isNaN(result)) {
     result = 0;
+  }
+  
+  if (result > maxValue) {
+    result = maxValue;
   }
 
   if (result >= 0 || ctr.hasAttribute('data-negative')) {

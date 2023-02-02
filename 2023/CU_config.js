@@ -75,35 +75,20 @@ var config_data = `
       "showUndo": "false",
       "shape": "circle 12 black red true"
     },
-    { "name": "Crossed Cable",
-      "code": "acc",
-      "type": "bool"
-    },
-    { "name": "Crossed Charging Station",
-      "code": "acs",
-      "type": "bool"
-    },
-    { "name": "Mobility?",
+    { "name": "Mobility<br>(Moved out of community)",
       "code": "am",
       "type": "bool"
     },
-    { "name": "Docked",
-      "code": "ad",
-      "type":"radio",
-      "choices": {
-        "d": "Docked (not Engaged)<br>",
-        "e": "Engaged<br>",
-        "a": "Attempted but failed<br>",
-        "x": "Not attempted"
-      },
-      "defaultValue": "x"
+    { "name": "Docked (Not Engaged)<br>(On Charge Station)",
+      "code": "am",
+      "type": "bool"
+    },
+    { "name": "Engaged<br>(Charge Station balanced)",
+      "code": "am",
+      "type": "bool"
     }
   ],
   "teleop": [
-    { "name": "Cycle Timer",
-      "code": "tct",
-      "type": "cycle"
-    },
     { "name": "Grid Scoring",
       "code": "tsg",
       "type": "clickable_image",
@@ -120,16 +105,12 @@ var config_data = `
       "code": "tfc",
       "type": "counter"
     },
-    { "name": "Was Defended",
-      "code": "wd",
+    { "name": "Was Fed<br>Game Pieces",
+      "code": "wf",
       "type": "bool"
     },
-    { "name": "Who Defended this bot",
-      "code": "who",
-      "type": "text"
-    },
-    { "name": "Smart Placement<br>(creates Links)",
-      "code": "lnk",
+    { "name": "Was Defended",
+      "code": "wd",
       "type": "bool"
     },
     { "name": "Floor Pickup",
@@ -145,10 +126,6 @@ var config_data = `
     }
   ],
   "endgame": [
-    { "name": "Docking Timer",
-      "code": "dt",
-      "type": "timer"
-    },
     { "name": "Final Status",
       "code": "fs",
       "type":"radio",
@@ -163,7 +140,8 @@ var config_data = `
     },
     { "name": "Total # of alliance<br>robots docked/engaged",
       "code": "dn",
-      "type": "counter"
+      "type": "counter",
+      "max": 3
     }
   ],
   "postmatch": [
@@ -193,22 +171,6 @@ var config_data = `
         "x": "Did not play defense"
       },
       "defaultValue": "x"
-    },
-    { "name": "Swerve drive?",
-      "code": "sd",
-      "type": "bool"
-    },
-    { "name": "Speed Rating",
-      "code": "sr",
-      "type": "radio",
-      "choices": {
-        "1": "1 (slow)<br>",
-        "2": "2<br>",
-        "3": "3<br>",
-        "4": "4<br>",
-        "5": "5 (fast)"
-      },
-      "defaultValue":"3"
     },
     { "name": "Died/Immobilized",
       "code": "die",
