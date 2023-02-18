@@ -80,11 +80,11 @@ var config_data = `
       "type": "bool"
     },
     { "name": "Docked (Not Engaged)<br>(On Charge Station)",
-      "code": "am",
+      "code": "ad",
       "type": "bool"
     },
     { "name": "Engaged<br>(Charge Station balanced)",
-      "code": "am",
+      "code": "ae",
       "type": "bool"
     }
   ],
@@ -100,6 +100,10 @@ var config_data = `
       "showUndo": "false",
       "shape": "circle 12 black red true",
       "cycleTimer": "tct"
+    },
+    { "name": "Links Scored",
+      "code": "ls",
+      "type": "counter"
     },
     { "name": "Feeder Count<br>(Fed another bot)",
       "code": "tfc",
@@ -133,6 +137,7 @@ var config_data = `
         "p": "Parked<br>",
         "d": "Docked (Not Engaged)<br>",
         "e": "Engaged<br>",
+	"b": "Docked, broke engagement<br>",
         "a": "Attempted but failed<br>",
         "x": "Not attempted"
       },
@@ -155,10 +160,6 @@ var config_data = `
         "x": "Not Observed"
       },
       "defaultValue": "x"
-    },
-    { "name": "Links Scored",
-      "code": "ls",
-      "type": "counter"
     },
     { "name": "Defense Rating",
       "code": "dr",
