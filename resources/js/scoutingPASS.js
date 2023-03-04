@@ -966,7 +966,7 @@ function clearForm() {
   }
 
   // Robot
-  resetRobot()
+  //resetRobot()
 
   // Clear XY coordinates
   inputs = document.querySelectorAll("[id*='XY_']");
