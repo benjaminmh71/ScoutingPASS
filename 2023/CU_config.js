@@ -149,44 +149,8 @@ var config_data = `
     }
   ],
   "postmatch": [
-    { "name": "Driver Skill",
-      "code": "ds",
-      "type": "radio",
-      "choices": {
-        "n": "Not Effective<br>",
-        "a": "Average<br>",
-        "v": "Very Effective<br>",
-        "x": "Not Observed"
-      },
-      "defaultValue": "x"
-    },
-    { "name": "Defense Rating",
-      "code": "dr",
-      "type": "radio",
-      "choices": {
-        "b": "Below Average<br>",
-        "a": "Average<br>",
-        "g": "Good<br>",
-        "e": "Excellent<br>",
-        "x": "Did not play defense"
-      },
-      "defaultValue": "x"
-    },
     { "name": "Died/Immobilized",
       "code": "die",
-      "type": "bool"
-    },
-    { "name": "Tippy<br>(almost tipped over)",
-      "code": "tip",
-      "type": "bool"
-    },
-    { "name": "Dropped Cones (>2)",
-      "code": "dc",
-      "type": "bool"
-    },
-    { "name": "Make good<br>alliance partner?",
-      "tooltip": "Would you want this robot on your alliance in eliminations?",
-      "code": "all",
       "type": "bool"
     },
     { "name": "Comments",
