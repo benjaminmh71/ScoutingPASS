@@ -79,11 +79,11 @@ var config_data = `
       "code": "am",
       "type": "bool"
     },
-    { "name": "Docked (Not Engaged)<br>(On Charge Station)",
+    { "name": "On Charge Station (Not Balanced)",
       "code": "ad",
       "type": "bool"
     },
-    { "name": "Engaged<br>(Charge Station balanced)",
+    { "name": "On Charge Station, Balanced",
       "code": "ae",
       "type": "bool"
     }
@@ -134,15 +134,15 @@ var config_data = `
       "type":"radio",
       "choices": {
         "p": "Parked<br>",
-        "d": "Docked (Not Engaged)<br>",
-        "e": "Engaged<br>",
-	"b": "Docked, broke engagement<br>",
+        "d": "On Charge Station, not Balanced<br>",
+        "e": "On Charge Station, Balance<br>",
+	"b": "On Charge Station, Broke Balance<br>",
         "a": "Attempted but failed<br>",
         "x": "Not attempted"
       },
       "defaultValue": "x"
     },
-    { "name": "Total # of alliance<br>robots docked/engaged",
+    { "name": "Total # of alliance<br>robots on charge station",
       "code": "dn",
       "type": "counter",
       "max": 3
