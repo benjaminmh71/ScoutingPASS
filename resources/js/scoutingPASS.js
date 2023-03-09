@@ -1040,6 +1040,10 @@ function clearForm() {
       }
     }
   }
+  
+  document.getElementById("input_t").value = getCurrentTeamNumberFromRobot().replace("frc", "");
+  onTeamnameChange();
+  
   drawFields()
 }
 
