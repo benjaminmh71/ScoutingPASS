@@ -64,16 +64,29 @@ var config_data = `
     }
   ],
   "auton": [
-    { "name": "Auto Scoring",
-      "code": "asg",
-      "type": "clickable_image",
-      "filename": "2023/grid_image.png",
-      "dimensions": "9 4",
-      "clickRestriction": "onePerBox",
-      "toggleClick": "true",
-      "showFlip": "false",
-      "showUndo": "false",
-      "shape": "circle 12 black red true"
+	{ "name": "Cubes Scored High",
+      "code": "auh",
+      "type": "counter"
+    },
+	{ "name": "Cubes Scored Mid",
+      "code": "aum",
+      "type": "counter"
+    },
+	{ "name": "Cubes Scored Low",
+      "code": "aul",
+      "type": "counter"
+    },
+	{ "name": "Cones Scored High",
+      "code": "ach",
+      "type": "counter"
+    },
+	{ "name": "Cones Scored Mid",
+      "code": "acm",
+      "type": "counter"
+    },
+	{ "name": "Cones Scored Low",
+      "code": "acl",
+      "type": "counter"
     },
     { "name": "Mobility<br>(Moved out of community)",
       "code": "am",
@@ -89,19 +102,28 @@ var config_data = `
     }
   ],
   "teleop": [
-    { "name": "Grid Scoring",
-      "code": "tsg",
-      "type": "clickable_image",
-      "filename": "2023/grid_image.png",
-      "dimensions": "9 4",
-      "clickRestriction": "onePerBox",
-      "toggleClick": "true",
-      "showFlip": "false",
-      "showUndo": "false",
-      "shape": "circle 12 black red true"
+    { "name": "Cubes Scored High",
+      "code": "tuh",
+      "type": "counter"
     },
-    { "name": "Links Scored",
-      "code": "ls",
+	{ "name": "Cubes Scored Mid",
+      "code": "tum",
+      "type": "counter"
+    },
+	{ "name": "Cubes Scored Low",
+      "code": "tul",
+      "type": "counter"
+    },
+	{ "name": "Cones Scored High",
+      "code": "tch",
+      "type": "counter"
+    },
+	{ "name": "Cones Scored Mid",
+      "code": "tcm",
+      "type": "counter"
+    },
+	{ "name": "Cones Scored Low",
+      "code": "tcl",
       "type": "counter"
     },
     { "name": "Feeder Count<br>(Fed another bot)",
@@ -149,6 +171,17 @@ var config_data = `
     }
   ],
   "postmatch": [
+	{ "name": "Defense Score",
+	  "code": "ds",
+	  "type": "radio",
+	  "choices": {
+		  "ne": "Not Effective<br>",
+		  "e": "Effective<br>",
+		  "ve": "Very Effective<br>",
+		  "no": "Not Observed"
+	  },
+	  "defaultValue": "no"
+	},
     { "name": "Died/Immobilized",
       "code": "die",
       "type": "bool"
