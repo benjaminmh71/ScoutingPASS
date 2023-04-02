@@ -99,6 +99,10 @@ var config_data = `
     { "name": "On Charge Station, Balanced",
       "code": "ae",
       "type": "bool"
+    },
+    { "name": "Attempted Charge Station, Failed",
+      "code": "acsf",
+      "type": "bool"
     }
   ],
   "teleop": [
